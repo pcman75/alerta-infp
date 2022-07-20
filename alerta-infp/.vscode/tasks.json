@@ -74,7 +74,7 @@
         {
             "label": "build image",
             "type": "shell",
-            "command": "docker run --rm --privileged -v ~/.docker:/root/.docker -v /telegramalarm:/data homeassistant/amd64-builder --all -t /data",
+            "command": "docker run --rm --privileged -v ~/.docker:/root/.docker -v /alerta-infp:/data homeassistant/amd64-builder --all -t /data",
             "problemMatcher": [],
             "group": {
                 "kind": "build",

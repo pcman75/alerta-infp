@@ -50,7 +50,7 @@ COPY .devcontainer/start_hassio.sh /usr/local/bin/start_hassio.sh
 # Install dependencies for the add-on development below.  For example, if you're running Node.js,
 # you may want something like the following...
 RUN apt-get install -y --no-install-recommends python3 python3-pip
-RUN pip3 install telethon quart
+RUN pip3 install requests paho-mqtt sseclient
 
 
 # Generate a machine-id for this container

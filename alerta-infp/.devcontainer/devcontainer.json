@@ -13,15 +13,15 @@
 	"settings": { 
 		"terminal.integrated.shell.linux": "/bin/bash"
 	},
-	"workspaceMount": "source=${localWorkspaceFolder},target=/workspaces/test_hassio/addons/local/telegramalarm,type=bind,consistency=delegated",
-	"workspaceFolder": "/workspaces/test_hassio/addons/local/telegramalarm",
+	"workspaceMount": "source=${localWorkspaceFolder},target=/workspaces/test_hassio/addons/local/alerta-infp,type=bind,consistency=delegated",
+	"workspaceFolder": "/workspaces/test_hassio/addons/local/alerta-infp",
 	"mounts": [
 		// Cache docker images between devcontainer rebuilds (and share between devcontainers)
 		"source=vsc-hassio-docker,target=/var/lib/docker,type=volume"
 	],
 
 	// Post-create command to initialize the workspace.
-	"postCreateCommand": "cd /workspaces/test_hassio/addons/local/telegramalarm",
+	"postCreateCommand": "cd /workspaces/test_hassio/addons/local/alerta-infp",
 	 "extensions": [
 		"ms-python.python",
 		"dbaeumer.vscode-eslint"

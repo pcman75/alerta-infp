@@ -15,7 +15,7 @@
     "schema": {
         "mqtt_server": "str",
         "mqtt_port": "int(1,99999999)",
-        "mqtt_user": "mqtt_user",
+        "mqtt_user": "str",
         "mqtt_password": ""
     }, 
     "ingress": false,
