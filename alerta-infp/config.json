@@ -18,7 +18,7 @@
         "mqtt_user": "mqtt_user",
         "mqtt_password": ""
     }, 
-    "ingress": true,
+    "ingress": false,
     "ingress_port": 0,
     "homeassistant_api": false,
     "arch": ["amd64", "armv7", "armhf", "i386" , "aarch64"]
