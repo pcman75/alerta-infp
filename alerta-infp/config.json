@@ -11,16 +11,21 @@
         "mqtt_port": 1883,
         "mqtt_user": "mqtt_user",
         "mqtt_password": ""
-     },
+    },
     "schema": {
         "mqtt_server": "str",
         "mqtt_port": "int(1,99999999)",
         "mqtt_user": "str",
-        "mqtt_password": ""
-    }, 
+        "mqtt_password": "str"
+    },
     "ingress": false,
     "ingress_port": 0,
     "homeassistant_api": false,
-    "arch": ["amd64", "armv7", "armhf", "i386" , "aarch64"]
+    "arch": [
+        "amd64",
+        "armv7",
+        "armhf",
+        "i386",
+        "aarch64"
+    ]
 }
-  
