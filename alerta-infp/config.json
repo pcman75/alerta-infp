@@ -10,15 +10,13 @@
         "mqtt_server": "homeassistant.local",
         "mqtt_port": 1883,
         "mqtt_user": "mqtt_user",
-        "mqtt_password": "",
-        "LOG_LEVEL": "DEBUG"
+        "mqtt_password": ""
      },
     "schema": {
         "mqtt_server": "str",
         "mqtt_port": "int(1,99999999)",
         "mqtt_user": "mqtt_user",
-        "mqtt_password": "",
-        "LOG_LEVEL": "list(CRITICAL|ERROR|WARN|INFO|DEBUG)"
+        "mqtt_password": ""
     }, 
     "ingress": true,
     "ingress_port": 0,
