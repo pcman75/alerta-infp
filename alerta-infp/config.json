@@ -1,22 +1,24 @@
 {
     "name": "Cutremur Bucuresti",
-    "version": "0.1",
+    "version": "0.2",
     "slug": "alerta-infp",
     "description": "In momentul producerii unui cutremur in zona Vrancea de peste 4.5 grade pe scara Richter, senzorul se va activa",
     "url": "https://github.com/pcman75/alerta-infp",
     "startup": "application",
     "boot": "auto",
     "options": {
-        "mqtt_server": "homeassistant.local",
+        "mqtt_server": "core-mosquitto",
         "mqtt_port": 1883,
-        "mqtt_user": "mqtt_user",
-        "mqtt_password": ""
+        "mqtt_user": "!secret mqtt_username",
+        "mqtt_password": "!secret mqtt_password",
+        "LOG_LEVEL": "DEBUG"
     },
     "schema": {
         "mqtt_server": "str",
         "mqtt_port": "int(1,99999999)",
         "mqtt_user": "str",
-        "mqtt_password": "str"
+        "mqtt_password": "str",
+        "LOG_LEVEL": "list(CRITICAL|ERROR|WARN|INFO|DEBUG)"
     },
     "ingress": false,
     "ingress_port": 0,
