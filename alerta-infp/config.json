@@ -2,7 +2,7 @@
     "name": "Cutremur Bucuresti",
     "version": "0.2",
     "slug": "alerta-infp",
-    "description": "In momentul producerii unui cutremur in zona Vrancea de peste 4.5 grade pe scara Richter, senzorul se va activa",
+    "description": "Addon-ul Homeassistant creaza senzorii “Cutremur”, “Magnitudine Cutremur”, “Secunde pana la Bucuresti” folosind datele disponibile la http://alerta.infp.ro",
     "url": "https://github.com/pcman75/alerta-infp",
     "startup": "application",
     "boot": "auto",
