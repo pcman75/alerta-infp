@@ -50,6 +50,7 @@ def main():
                         if(msg.data):
                             message = json.loads(msg.data)
                             if('err' in message):
+                                logger.info('Refreshing connection')
                                 break;
                             else:
                                 magnitude = float(message["mag"])
@@ -76,6 +77,8 @@ def main():
 
                     except Exception as e:
                         logger.error(e)
+            else:
+                logger.error('Failed to get server connection key')
     except Exception as e:
         logger.error(e)
 
