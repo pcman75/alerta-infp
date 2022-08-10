@@ -34,10 +34,6 @@ def main():
         mqttClient.publish("homeassistant/binary_sensor/alerta-infp/config", '{"name":"Cutremur","dev_cla":"safety","stat_t":"homeassistant/binary_sensor/alerta-infp/state","avty_t":"alerta-infp/online"}', retain = True, qos = 0)
         mqttClient.publish("homeassistant/sensor/alerta-infp/magnitudine/config", '{"name":"Magnitudine Cutremur","stat_t":"homeassistant/sensor/alerta-infp/magnitudine/state","avty_t":"alerta-infp/online"}', retain = True, qos = 0)
         mqttClient.publish("homeassistant/sensor/alerta-infp/seconds/config", '{"name":"Secunde pana la Bucuresti","stat_t":"homeassistant/sensor/alerta-infp/seconds/state","avty_t":"alerta-infp/online"}', retain = True, qos = 0)
-        
-        prev_earthquake = 'ON'
-        prev_magnitude = 0.
-        prev_seconds = 0.
 
         while(1):
             host = 'http://alerta.infp.ro/'
@@ -59,21 +55,14 @@ def main():
 
                                 logger.debug(f'Magnitude = {magnitude} seconds = {seconds} earthquake = {earthquake}')
 
-                                if not math.isclose(prev_magnitude, magnitude):
-                                    mqttClient.publish('homeassistant/sensor/alerta-infp/magnitudine/state', magnitude, qos = 0)
-                                    logger.info(f'Magnitude = {magnitude}')
+                                mqttClient.publish('homeassistant/sensor/alerta-infp/magnitudine/state', magnitude, qos = 0)
+                                logger.info(f'Magnitude = {magnitude}')
                                 
-                                if prev_earthquake != earthquake:
-                                    mqttClient.publish('homeassistant/binary_sensor/alerta-infp/state', earthquake, qos = 0)
-                                    logger.info(f'earthquake = {earthquake}')
+                                mqttClient.publish('homeassistant/binary_sensor/alerta-infp/state', earthquake, qos = 0)
+                                logger.info(f'earthquake = {earthquake}')
                                 
-                                if not math.isclose(prev_seconds, seconds):
-                                    mqttClient.publish('homeassistant/sensor/alerta-infp/seconds/state', seconds, qos = 0)
-                                    logger.info(f'seconds = {seconds}')
-
-                                prev_magnitude = magnitude
-                                prev_earthquake = earthquake
-                                prev_seconds = seconds
+                                mqttClient.publish('homeassistant/sensor/alerta-infp/seconds/state', seconds, qos = 0)
+                                logger.info(f'seconds = {seconds}')
 
                     except Exception as e:
                         logger.error(e)
